@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SolarSports</string>
+
+    <string-array name="terrazas_array">
+        <item>Seleccione una opción</item>
+        <item>Estadios</item>
+        <item>Gimnasios</item>
+        <item>Pistas</item>
+        <item>Canchas sintenticas</item>
+        <item>Otros</item>
+    </string-array>
+</resources>
