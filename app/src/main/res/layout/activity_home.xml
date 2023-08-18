@@ -52,7 +52,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewLogo"
         android:layout_width="228dp"
         android:layout_height="233dp"
         app:layout_constraintBottom_toBottomOf="parent"

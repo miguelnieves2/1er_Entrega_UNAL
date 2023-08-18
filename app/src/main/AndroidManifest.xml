@@ -16,6 +16,9 @@
         android:theme="@style/Theme.SolarSports"
         tools:targetApi="31">
         <activity
+            android:name=".ListaTerrazasActivity"
+            android:exported="false" />
+        <activity
             android:name=".EstadisticasActivity"
             android:exported="false" />
         <activity

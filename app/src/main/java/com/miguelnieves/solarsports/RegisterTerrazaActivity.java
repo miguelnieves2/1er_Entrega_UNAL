@@ -3,6 +3,7 @@ package com.miguelnieves.solarsports;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,8 @@ import android.widget.ImageView;
 
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.miguelnieves.solarsports.models.TerrazaSolar;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -93,28 +96,17 @@ public class RegisterTerrazaActivity extends AppCompatActivity {
         buttonNewTerraza.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Verificamos si los valores estan vacios
                 if(!selectedTerraza.equals("Seleccione una opción") && !energiaProducida.getText().toString().isEmpty() && !valorAhorrado.getText().toString().isEmpty() && !selectedMeses.equals("Seleccione una opción")){
 
-                    // Almacenar en TXT
-                    File file = new File(getFilesDir(), "SolarTerrazas.txt");
-                    try {
-                        FileWriter writer = new FileWriter(file, true);
-                        BufferedWriter bufferdWriter = new BufferedWriter(writer);
-                        String datos = selectedTerraza +", "+ energiaProducida.getText().toString()+", "+valorAhorrado.getText().toString() + ", "+selectedMeses;
-                        bufferdWriter.write(datos);
-                        bufferdWriter.newLine();
-                        bufferdWriter.close();
+                    TerrazaSolar terraza = new TerrazaSolar(selectedTerraza, Integer.parseInt(energiaProducida.getText().toString()), Integer.parseInt(valorAhorrado.getText().toString()), selectedMeses);
 
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                    spinnerTerrazas.setSelection(0);
-                    energiaProducida.setText("");
-                    valorAhorrado.setText("");
-                    spinnerMeses.setSelection(0);
+                    saveTerraza(terraza);
+
 
                 }else{
+                    Log.d("Formulario terrazas vacio", "Espacios vacios");
                     Toast.makeText(RegisterTerrazaActivity.this, "Todos los campos deben estar diligenciados", Toast.LENGTH_LONG).show();
                 }
             }
@@ -144,8 +136,31 @@ public class RegisterTerrazaActivity extends AppCompatActivity {
                 startActivity(home);
             }
         });
+    }
 
 
+    public void saveTerraza(TerrazaSolar terraza){
 
+        File file= new File(getFilesDir(),"terrazasSolares.txt");
+        try {
+            System.out.println("Funcion saveTerraza: entro al Try catch");
+            FileWriter writer= new FileWriter(file,true);
+            BufferedWriter bufferedWriter= new BufferedWriter(writer);
+            bufferedWriter.write(terraza.getTerraza()+","+terraza.getEnergia()+","+
+                    terraza.getValorAhorrado()+","+terraza.getMes());
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+
+
+            spinnerTerrazas.setSelection(0);
+            energiaProducida.setText("");
+            valorAhorrado.setText("");
+            spinnerMeses.setSelection(0);
+
+            Toast.makeText(this, "Terraza solar registrada!", Toast.LENGTH_LONG).show();
+            System.out.println("Terraza registrada");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

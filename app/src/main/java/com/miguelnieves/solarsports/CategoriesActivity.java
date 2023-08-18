@@ -41,7 +41,7 @@ public class CategoriesActivity extends AppCompatActivity {
         LinearLayout linearLayoutGym = findViewById(R.id.LinearLayoutGym);
         LinearLayout linearLayoutSkate = findViewById(R.id.linearLayoutSkate);
         LinearLayout linearLayoutSoccer = findViewById(R.id.linearLayoutSoccer);
-        LinearLayout linearLayoutOthers = findViewById(R.id.linearLayoutOthers);
+        LinearLayout linearLayoutListaTerrazas = findViewById(R.id.linearLayoutOthers);
 
         linearLayoutStadium.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,10 +75,10 @@ public class CategoriesActivity extends AppCompatActivity {
             }
         });
 
-        linearLayoutOthers.setOnClickListener(new View.OnClickListener() {
+        linearLayoutListaTerrazas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CategoriesActivity.this, RegisterTerrazaActivity.class);
+                Intent intent = new Intent(CategoriesActivity.this,  ListaTerrazasActivity.class);
                 startActivity(intent);
             }
         });
