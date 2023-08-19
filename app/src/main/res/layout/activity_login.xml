@@ -8,7 +8,7 @@
 
     <EditText
 
-        android:id="@+id/editTextName"
+        android:id="@+id/editTextUserName"
         android:layout_width="274dp"
         android:layout_height="48dp"
 
@@ -17,7 +17,7 @@
         android:ems="10"
 
         android:hint="Usuario o correo electronico"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:paddingLeft="10dp"
         android:singleLine="false"
         android:textColorHint="@color/grey"
@@ -45,7 +45,7 @@
         app:layout_constraintVertical_bias="0.641" />
 
     <EditText
-        android:id="@+id/editTextCreatePassword"
+        android:id="@+id/editTextPassword"
         android:layout_width="273dp"
         android:layout_height="48dp"
         android:background="@drawable/custom_edit_text"

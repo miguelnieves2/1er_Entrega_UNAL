@@ -10,8 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.miguelnieves.solarsports.models.User;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,6 +17,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.miguelnieves.solarsports.models.User;
+import com.miguelnieves.solarsports.utils.userUtils;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -33,6 +34,8 @@ public class RegisterActivity extends AppCompatActivity {
     EditText email;
     EditText username;
     EditText password;
+
+
 
 
     @Override
@@ -63,9 +66,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 !password.getText().toString().isEmpty()
                 ) {
                     // Verifica si existe el usuario
-                    if (checkUser(
+                    if (userUtils.checkUser(
                             email.getText().toString(),
-                            username.getText().toString()
+                            getFilesDir()
                     )
                     ) {
                         // Usuario esta registrado
@@ -102,27 +105,6 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-    public boolean checkUser(String username, String email){
-        File file = new File(getFilesDir(),"userData.txt");
-        try {
-            FileReader reader = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(reader);
-            String line;
-            List<String> emailList = new ArrayList<>();
-            List<String> userNameList = new ArrayList<>();
-
-            while((line=bufferedReader.readLine()) != null){
-                String[] data = line.split(",");
-                emailList.add(data[1]);
-                userNameList.add(data[2]);
-            }
-
-            return emailList.contains(email) || userNameList.contains(username);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
 }
 
 

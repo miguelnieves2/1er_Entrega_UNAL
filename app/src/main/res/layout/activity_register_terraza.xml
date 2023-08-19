@@ -91,7 +91,6 @@
         app:layout_constraintTop_toBottomOf="@id/spinnerTerrazas" />
 
 
-
     <EditText
 
         android:id="@+id/editTextEnergiaProducida"
@@ -104,10 +103,11 @@
 
         android:ems="10"
         android:hint="Cantidad energía producida"
-        android:inputType="text"
+        android:inputType="numberDecimal"
+        android:maxLength="5"
         android:paddingLeft="10dp"
-        android:singleLine="false"
 
+        android:singleLine="false"
         android:textColorHint="@color/grey"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
