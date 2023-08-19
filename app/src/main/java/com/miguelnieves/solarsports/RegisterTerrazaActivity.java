@@ -26,8 +26,9 @@ public class RegisterTerrazaActivity extends AppCompatActivity {
     Spinner spinnerTerrazas, spinnerMeses;
     String selectedTerraza, selectedMeses;
     Button buttonNewTerraza;
-    ImageView IconHome;
 
+    ImageView IconHome;
+    ImageView ArrowBack;
 
     EditText energiaProducida, valorAhorrado;
 
@@ -106,7 +107,6 @@ public class RegisterTerrazaActivity extends AppCompatActivity {
 
 
                 }else{
-                    Log.d("Formulario terrazas vacio", "Espacios vacios");
                     Toast.makeText(RegisterTerrazaActivity.this, "Todos los campos deben estar diligenciados", Toast.LENGTH_LONG).show();
                 }
             }
@@ -116,8 +116,6 @@ public class RegisterTerrazaActivity extends AppCompatActivity {
 
 
         // Volver a categorías
-        ImageView ArrowBack;
-
         ArrowBack = findViewById(R.id.iconArrowBack);
         Intent categories = new Intent(this, CategoriesActivity.class);
         ArrowBack.setOnClickListener(new View.OnClickListener() {
@@ -143,7 +141,6 @@ public class RegisterTerrazaActivity extends AppCompatActivity {
 
         File file= new File(getFilesDir(),"terrazasSolares.txt");
         try {
-            System.out.println("Funcion saveTerraza: entro al Try catch");
             FileWriter writer= new FileWriter(file,true);
             BufferedWriter bufferedWriter= new BufferedWriter(writer);
             bufferedWriter.write(terraza.getTerraza()+","+terraza.getEnergia()+","+
@@ -151,14 +148,13 @@ public class RegisterTerrazaActivity extends AppCompatActivity {
             bufferedWriter.newLine();
             bufferedWriter.close();
 
-
+            // Vaciamos los datos
             spinnerTerrazas.setSelection(0);
             energiaProducida.setText("");
             valorAhorrado.setText("");
             spinnerMeses.setSelection(0);
 
             Toast.makeText(this, "Terraza solar registrada!", Toast.LENGTH_LONG).show();
-            System.out.println("Terraza registrada");
         }catch (Exception e){
             e.printStackTrace();
         }

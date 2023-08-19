@@ -35,7 +35,7 @@ public class TerrazaSolar {
         return valorAhorrado;
     }
 
-    public void setValorAhorrado(int username) {
+    public void setValorAhorrado(int valorAhorrado) {
         this.valorAhorrado = valorAhorrado;
     }
 
