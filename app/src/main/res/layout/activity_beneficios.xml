@@ -21,34 +21,207 @@
 
     <ImageView
         android:id="@+id/imageViewLogo"
-        android:layout_width="228dp"
-        android:layout_height="233dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/design" />
+        app:srcCompat="@drawable/imageicon" />
+
+
+    <!-- NAVIGATION BAR -->
+
 
     <TextView
         android:id="@+id/textViewNameApp2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="SolarSports"
         android:textColor="#1096CA"
         android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo" />
+
+    <TextView
+        android:id="@+id/textViewTitleBeneficios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:text="Beneficios"
+        android:textColor="#1096CA"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-    <!-- NAVIGATION BAR -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="365dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="#51B4F3"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleBeneficios">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iconCard1"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:elevation="50dp"
+                app:srcCompat="@drawable/baseline_query_stats_24" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textViewInfo1"
+                android:layout_width="284dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:text="Tus terrazas solares son eficientes, generando 25 kWh/mes. Para más producción, optimiza tus paneles!"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="365dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="#51B4F3"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iconCard2"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:elevation="50dp"
+                app:srcCompat="@drawable/round_groups_24" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textViewInfo2"
+                android:layout_width="284dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:text="Estás superando el promedio de energía producida en un 25%. Esto muestra tu compromiso con la sostenibilidad y la eficiencia."
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="365dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="#51B4F3"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iconCard3"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_weight="1"
+                android:elevation="50dp"
+                app:srcCompat="@drawable/round_emoji_objects_24" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textViewInfo3"
+                android:layout_width="284dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:text="Tu elección solar construye un mañana limpio y brillante. Cada kW es un paso hacia adelante. ¡Sigue así!"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
@@ -58,7 +231,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageViewLogo"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
@@ -93,85 +266,6 @@
                 app:srcCompat="@mipmap/userr" />
         </LinearLayout>
     </com.google.android.material.navigation.NavigationView>
-
-
-    <ScrollView
-        android:layout_width="363dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="280dp"
-        android:background="@drawable/border_categories"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageViewLogo"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/textViewStadium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at ligula finibus, feugiat urna pellentesque, tristique eros. Mauris luctus dictum porta. "
-            android:textColor="@color/white"
-            android:textSize="18sp"/>
-    </ScrollView>
-
-    <ScrollView
-        android:layout_width="363dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="410dp"
-        android:background="@drawable/border_categories"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageViewLogo"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/textViewConsejo2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at ligula finibus, feugiat urna pellentesque, tristique eros. Mauris luctus dictum porta. "
-            android:textColor="@color/white"
-            android:textSize="18sp"/>
-    </ScrollView>
-
-    <ScrollView
-        android:layout_width="363dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="540dp"
-        android:background="@drawable/border_categories"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageViewLogo"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/textViewConsejo3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at ligula finibus, feugiat urna pellentesque, tristique eros. Mauris luctus dictum porta. "
-            android:textColor="@color/white"
-            android:textSize="18sp"/>
-    </ScrollView>
-
-    <TextView
-        android:id="@+id/textViewConsejos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Consejos"
-        android:textColor="#1096CA"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.356" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
