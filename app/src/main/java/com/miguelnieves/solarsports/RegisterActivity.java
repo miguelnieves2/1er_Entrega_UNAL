@@ -49,7 +49,6 @@ public class RegisterActivity extends AppCompatActivity {
         register = findViewById(R.id.buttonNewTerraza);
         login = findViewById(R.id.textViewLogin);
 
-
         Intent loginActivity = new Intent(this, LoginActivity.class);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,9 +56,6 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(loginActivity);
             }
         });
-
-
-
 
         Intent homeScreen = new Intent(this,HomeActivity.class);
 
