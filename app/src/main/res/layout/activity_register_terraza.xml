@@ -82,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Energía producida:"
+        android:text="Energía producida en khw:"
         android:textColor="#1096CA"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,12 +138,11 @@
         android:background="@drawable/custom_edit_text"
         android:elevation="5dp"
 
-        android:ems="10"
         android:hint="Valor ahorrado"
         android:inputType="numberDecimal"
         android:paddingLeft="10dp"
-        android:singleLine="false"
 
+        android:singleLine="false"
         android:textColorHint="@color/grey"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"

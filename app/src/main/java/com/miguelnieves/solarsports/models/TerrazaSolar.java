@@ -2,9 +2,9 @@ package com.miguelnieves.solarsports.models;
 
 public class TerrazaSolar {
     String tipoTerraza, mes;
-    int energiaGenerada, valorAhorrado;
+    double energiaGenerada, valorAhorrado;
 
-    public TerrazaSolar(String tipoTerraza, int energiaGenerada, int valorAhorrado, String mes) {
+    public TerrazaSolar(String tipoTerraza, double energiaGenerada, double valorAhorrado, String mes) {
         this.tipoTerraza = tipoTerraza;
         this.energiaGenerada = energiaGenerada;
         this.valorAhorrado = valorAhorrado;
@@ -21,21 +21,21 @@ public class TerrazaSolar {
 
 
 
-    public Integer getEnergia() {
+    public Double getEnergia() {
         return energiaGenerada;
     }
 
-    public void setEnergia(int energiaGenerada) {
+    public void setEnergia(double energiaGenerada) {
         this.energiaGenerada = energiaGenerada;
     }
 
 
 
-    public int getValorAhorrado() {
+    public double getValorAhorrado() {
         return valorAhorrado;
     }
 
-    public void setValorAhorrado(int valorAhorrado) {
+    public void setValorAhorrado(double valorAhorrado) {
         this.valorAhorrado = valorAhorrado;
     }
 

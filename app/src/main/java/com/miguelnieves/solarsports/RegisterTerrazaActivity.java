@@ -100,8 +100,9 @@ public class RegisterTerrazaActivity extends AppCompatActivity {
 
                 // Verificamos si los valores estan vacios
                 if(!selectedTerraza.equals("Seleccione una opción") && !energiaProducida.getText().toString().isEmpty() && !valorAhorrado.getText().toString().isEmpty() && !selectedMeses.equals("Seleccione una opción")){
-
-                    TerrazaSolar terraza = new TerrazaSolar(selectedTerraza, Integer.parseInt(energiaProducida.getText().toString()), Integer.parseInt(valorAhorrado.getText().toString()), selectedMeses);
+                    String valorAhorradoText = valorAhorrado.getText().toString().replace(",", ".");
+                    Log.d("Debug", "Valor ahorrado: " + valorAhorradoText);
+                    TerrazaSolar terraza = new TerrazaSolar(selectedTerraza, Double.parseDouble(energiaProducida.getText().toString()), Double.parseDouble(valorAhorradoText), selectedMeses);
 
                     saveTerraza(terraza);
 

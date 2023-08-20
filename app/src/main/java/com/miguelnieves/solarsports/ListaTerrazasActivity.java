@@ -92,8 +92,8 @@ public class ListaTerrazasActivity extends AppCompatActivity {
 
             // ["Gym","250","50000", "Agosto"]
             String tipoTerraza = dataTerraza[0];
-            int energia = Integer.parseInt(dataTerraza[1]);
-            int ingresos = Integer.parseInt(dataTerraza[2]);
+            double energia = Double.parseDouble(dataTerraza[1]);
+            double ingresos = Double.parseDouble(dataTerraza[2]);
             String mes = dataTerraza[3];
 
             TerrazaSolar createTerraza = new TerrazaSolar(tipoTerraza, energia, ingresos, mes);

@@ -35,9 +35,6 @@ public class RegisterActivity extends AppCompatActivity {
     EditText username;
     EditText password;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +47,22 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
 
         register = findViewById(R.id.buttonNewTerraza);
+        login = findViewById(R.id.textViewLogin);
+
+
+        Intent loginActivity = new Intent(this, LoginActivity.class);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(loginActivity);
+            }
+        });
+
+
 
 
         Intent homeScreen = new Intent(this,HomeActivity.class);
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,8 +94,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
 
         });
-
-
     }
 
     public void saveUser(User user){
@@ -102,9 +110,6 @@ public class RegisterActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-
-
 }
 
 
